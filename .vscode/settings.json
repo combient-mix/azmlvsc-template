@@ -1,0 +1,7 @@
+
+{
+  "python.pythonPath": "/opt/conda/envs/default/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintPath": "/opt/conda/envs/default/bin/pylint",
+}
