@@ -20,8 +20,5 @@ jobs:
       - name: Lint files
         run: .ci/bin/lint_files.sh
 
-      - name: Log into registry
-        run: .ci/bin/reg_login.sh
-
       - name: Build image
         run: .ci/bin/build_image.sh
