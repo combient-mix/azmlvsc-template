@@ -1,0 +1,3 @@
+**/.ipynb_checkpoints
+.devcontainer/devcontainer.json
+.azureml/config.json

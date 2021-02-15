@@ -1,0 +1,24 @@
+name: CI
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+
+    tags:
+      - v*
+
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint files
+        run: .ci/bin/lint_files.sh
+
+      - name: Build image
+        run: .ci/bin/build_image.sh
