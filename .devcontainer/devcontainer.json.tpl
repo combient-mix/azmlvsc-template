@@ -14,5 +14,12 @@
   ],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=default",
-  ]
+  ],
+  "containerEnv": {
+    "DATABRICKS_ADDRESS": "",
+    "DATABRICKS_API_TOKEN": "",
+    "DATABRICKS_CLUSTER_ID": "",
+    "DATABRICKS_ORG_ID": "",
+    "DATABRICKS_PORT": "15001",
+  }
 }
