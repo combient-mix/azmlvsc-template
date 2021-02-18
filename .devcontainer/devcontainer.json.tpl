@@ -5,6 +5,11 @@
   // Uncomment when running on Azure instance
   // "workspaceFolder": "/code/path/to/workspace",
   // "workspaceMount": "source=/home/azureuser/cloudfiles/code,target=/code,type=bind,consistency=default",
+  // "runArgs": [
+  //   "--cap-add=SYS_ADMIN",
+  //   "--device=/dev/fuse",
+  //   "--security-opt=apparmor:unconfined"
+  // ],
   "extensions": [
     "ms-azuretools.vscode-docker",
     "ms-python.python",
