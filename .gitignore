@@ -1,4 +1,8 @@
 **/.ipynb_checkpoints
+**/.ipynb_aml_checkpoints
 .devcontainer/devcontainer.json
 .azureml/config.json
 sandbox
+**/.amlignore.amltmp
+**/.amlignore
+!/.amlignore
