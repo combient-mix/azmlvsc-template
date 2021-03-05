@@ -1,2 +1,2 @@
-# azmlvsc-template
-An Azure Machine Learning project template for Visual Studio Code.
+# Introduction 
+TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
