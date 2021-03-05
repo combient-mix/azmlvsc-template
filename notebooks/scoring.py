@@ -20,7 +20,7 @@ print('numpy version {}.'.format(np.__version__))
 # %%
 # Arguments
 param_fileName = 'c_exa_021_PoT_dailyExportForScoring_v3_gold_historicalLoad_20200101_20200803_exportedOn_20200826_pipeID_4d0e9f02-19dc-4fd4-8204-87d914d09da9' # pylint: disable=line-too-long
-pipeID = "2f3bd07b-a50e-4d95-b30b-3533a94d99bd"
+pipeID = '2f3bd07b-a50e-4d95-b30b-3533a94d99bd'
 
 # %%
 # Parameters
