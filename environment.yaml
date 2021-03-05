@@ -8,16 +8,6 @@ dependencies:
   - pip=20.2.4
   - ipykernel=5.3.4
   - pip:
-<<<<<<< HEAD
-    - yapf==0.30.0
-    - pylint==2.6.0
-    - yamllint==1.23.0
-    - pandas==1.1.5
-    - azureml-core==1.22.0
-    - azureml-defaults==1.22.0
-    - seaborn==0.11.1
-    - matplotlib==3.3.3
-=======
     # Linters
     - yapf==0.30.0
     - pylint==2.6.0
@@ -31,4 +21,3 @@ dependencies:
     - seaborn==0.11.1
     - matplotlib==3.3.3
     - joblib==1.0.1
->>>>>>> template/main
