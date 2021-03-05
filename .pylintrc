@@ -93,7 +93,10 @@ disable=print-statement,
         comprehension-escape,
         missing-module-docstring,
         missing-class-docstring,
-        missing-function-docstring
+        missing-function-docstring,
+        invalid-name,
+        pointless-statement,
+        protected-access
 
 enable=c-extension-no-member,
        wrong-import-order
@@ -150,7 +153,7 @@ logging-format-style=old
 logging-modules=logging
 
 [STRING]
-check-quote-consistency=yes
+check-quote-consistency=no
 check-str-concat-over-line-jumps=no
 
 [SIMILARITIES]
