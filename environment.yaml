@@ -15,6 +15,7 @@ dependencies:
     # AML
     - azureml-core==1.22.0
     - azureml-defaults==1.22.0
+    - azureml-contrib-notebook==1.22.0
     # CLI
     - fire==0.4.0
     # DS
@@ -25,3 +26,4 @@ dependencies:
     - joblib==1.0.1
     - nbconvert==6.0.7
     - jupytext==1.10.2
+    - papermill==2.3.2
