@@ -96,7 +96,8 @@ disable=print-statement,
         missing-function-docstring,
         invalid-name,
         pointless-statement,
-        protected-access
+        protected-access,
+        too-many-locals
 
 enable=c-extension-no-member,
        wrong-import-order
