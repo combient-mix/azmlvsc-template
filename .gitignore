@@ -132,4 +132,5 @@ logs/
 # Template specific
 .devcontainer/devcontainer.json
 .azureml/config.json
-.ntbkstg/
+*.stg.ipynb
+papermill_notebook_run_handler.py

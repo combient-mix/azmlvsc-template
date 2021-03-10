@@ -7,8 +7,6 @@ import nbformat as nbf
 from azureml.contrib.notebook import AzureMLNotebookHandler, NotebookRunConfig
 from azureml.core import Environment, Experiment, ScriptRunConfig, Workspace
 
-NTBKSTG_PATH = '.ntbkstg'
-
 def main(notebook_path,
          target,
          conda_env_name='default',
@@ -26,16 +24,13 @@ def main(notebook_path,
       cell_timeout (int): Notebook cell timeout
   """
 
-  # Make a staging directory for notebooks
-  if not os.path.exists(NTBKSTG_PATH):
-    os.makedirs(NTBKSTG_PATH)
-
   # Convert jupytext to ipynb and write to ntbkstg
   ntbk = jupytext.read(notebook_path)
   kernelspec = {"display_name": f"Python [conda env:{conda_env_name}]", "language": "python", "name": conda_env_name}
   ntbk['metadata']['kernelspec'] = kernelspec
+  ntbkstg_path = os.path.dirname(notebook_path)
   nb_name = os.path.splitext(os.path.basename(notebook_path))[0]
-  nbf.write(ntbk, f'{NTBKSTG_PATH}/{nb_name}.ipynb')
+  nbf.write(ntbk, f'{ntbkstg_path}/{nb_name}.stg.ipynb')
 
   # Get workspace
   ws = Workspace.from_config()
@@ -43,11 +38,11 @@ def main(notebook_path,
   # Setup run configuration
   compute_target = ws.compute_targets[target]
   env = Environment.from_conda_specification(conda_env_name, file_path=conda_env_yml)
-  src = ScriptRunConfig(source_directory=NTBKSTG_PATH, compute_target=compute_target, environment=env)
+  src = ScriptRunConfig(source_directory=ntbkstg_path, compute_target=compute_target, environment=env)
 
   # Submit experiment
   handler = AzureMLNotebookHandler(timeout=cell_timeout)
-  rc = NotebookRunConfig(source_directory=NTBKSTG_PATH,
+  rc = NotebookRunConfig(source_directory=ntbkstg_path,
                          notebook=f'{nb_name}.ipynb',
                          output_notebook=f'outputs/{nb_name}.ipynb',
                          parameters=notebook_params,
