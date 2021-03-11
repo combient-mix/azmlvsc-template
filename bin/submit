@@ -43,7 +43,7 @@ def main(notebook_path,
   # Submit experiment
   handler = AzureMLNotebookHandler(timeout=cell_timeout)
   rc = NotebookRunConfig(source_directory=ntbkstg_path,
-                         notebook=f'{nb_name}.ipynb',
+                         notebook=f'{nb_name}.stg.ipynb',
                          output_notebook=f'outputs/{nb_name}.ipynb',
                          parameters=notebook_params,
                          handler=handler,
