@@ -97,7 +97,9 @@ disable=print-statement,
         invalid-name,
         pointless-statement,
         protected-access,
-        too-many-locals
+        too-many-locals,
+        redefined-outer-name,
+        too-many-function-args
 
 enable=c-extension-no-member,
        wrong-import-order
