@@ -10,5 +10,6 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "jupyter.sendSelectionToInteractiveWindow": true
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "files.trimTrailingWhitespace": true
 }
