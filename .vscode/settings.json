@@ -9,5 +9,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "files.trimTrailingWhitespace": true
 }
