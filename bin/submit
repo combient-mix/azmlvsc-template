@@ -11,7 +11,7 @@ def main(notebook_path,
          target,
          conda_env_name='default',
          conda_env_yml='environment.yaml',
-         cell_timeout=600,
+         cell_timeout=1200,
          **notebook_params):
   """
     Submits a notebook in jupytext %% format as an AML experiment. \n
