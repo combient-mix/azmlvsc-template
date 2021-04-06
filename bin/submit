@@ -1,4 +1,4 @@
-#!/opt/conda/envs/default/bin/python
+#!/opt/miniconda/envs/default/bin/python
 import os
 
 import fire
