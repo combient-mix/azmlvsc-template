@@ -7,6 +7,7 @@ dependencies:
   - python=3.7.7
   - pip=20.2.4
   - ipykernel=5.3.4
+  - notebook=6.3.0
   - pip:
     # Linters
     - yapf==0.30.0
@@ -16,6 +17,7 @@ dependencies:
     - azureml-core==1.22.0
     - azureml-defaults==1.22.0
     - azureml-contrib-notebook==1.22.0
+    - azureml-train-automl-client==1.22.0
     # CLI
     - fire==0.4.0
     # DS

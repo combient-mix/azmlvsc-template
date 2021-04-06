@@ -1,5 +1,5 @@
 # Base image
-FROM continuumio/miniconda3:4.9.2
+FROM mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
@@ -41,12 +41,16 @@ RUN apt-get update \
   https://github.com/hadolint/hadolint/releases/download/v1.19.0/hadolint-Linux-x86_64 \
   && chmod +x /bin/hadolint \
   #
+  # Pin conda environment
+  #
+  && conda install conda=4.9.2 \
   # Create DBX conda environment
   && conda create -n $CONDA_DBX_NAME -c conda-forge \
   python=3.7.7 \
   pip=20.2.4 \
   ipykernel=5.3.4 \
   openjdk=8.0.265 \
+  notebook=6.3.0 \
   && conda run -n $CONDA_DBX_NAME \
   pip install --disable-pip-version-check --no-cache-dir databricks-connect==7.3.* \
   #
@@ -67,7 +71,7 @@ COPY environment.yaml /tmp/environment.yaml
 RUN conda env create -f /tmp/environment.yaml \
   && rm /tmp/environment.yaml \
   && conda run -n $CONDA_ENV_NAME python -m ipykernel install --name $CONDA_ENV_NAME \
-  && chown default /opt/conda/envs/default
+  && chown default /opt/miniconda/envs/default
 
 # Init conda for non-root user
 USER $USERNAME
