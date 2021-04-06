@@ -16,7 +16,8 @@
     "ms-python.python",
     "ms-toolsai.jupyter",
     "exiasr.hadolint",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-mssql.mssql"
   ],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=default",
