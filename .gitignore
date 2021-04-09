@@ -127,6 +127,7 @@ dmypy.json
 .amlignore.amltmp
 .amlignore
 !/.amlignore
+!/notebooks/.amlignore
 logs/
 outputs/
 
