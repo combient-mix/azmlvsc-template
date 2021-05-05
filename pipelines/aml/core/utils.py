@@ -14,6 +14,7 @@ def nb_runner_step( # pylint: disable=unused-variable
   conda_env_name='default',
   conda_env_yml='environment.yaml',
   cell_timeout=1200,
+  allow_reuse=True,
   **notebook_params,
 ):
   # Convert jupytext to ipynb and write to ntbkstg
@@ -43,7 +44,7 @@ def nb_runner_step( # pylint: disable=unused-variable
     name=nb_name,
     notebook_run_config=nrc,
     compute_target=compute_target,
-    allow_reuse=True,
+    allow_reuse=allow_reuse,
     inputs=inputs,
     outputs=outputs,
   )
