@@ -18,7 +18,7 @@ def get_ws_and_run(experiment_name): # pylint: disable=unused-variable
     run = experiment.start_logging()
   return ws, run
 
-def register_model(run, model, name): # pylint: disable=unused-variable
+def register_model(run, model, name, tags=None): # pylint: disable=unused-variable
   # Dump model
   tmpdir = tempfile.mkdtemp()
   model_path = f"{tmpdir}/{name}.joblib"
@@ -30,8 +30,13 @@ def register_model(run, model, name): # pylint: disable=unused-variable
   shutil.rmtree(tmpdir)
 
   # Register
+<<<<<<< Updated upstream
   model = run.register_model(model_name=name, model_path=upload_to)
   return model
+=======
+  reg_model = run.register_model(model_name=name, model_path=upload_to, tags=tags)
+  return reg_model
+>>>>>>> Stashed changes
 
 def load_model(ws, name): # pylint: disable=unused-variable
   # Download model
