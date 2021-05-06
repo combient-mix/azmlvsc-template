@@ -30,13 +30,8 @@ def register_model(run, model, name, tags=None): # pylint: disable=unused-variab
   shutil.rmtree(tmpdir)
 
   # Register
-<<<<<<< Updated upstream
-  model = run.register_model(model_name=name, model_path=upload_to)
-  return model
-=======
   reg_model = run.register_model(model_name=name, model_path=upload_to, tags=tags)
   return reg_model
->>>>>>> Stashed changes
 
 def load_model(ws, name): # pylint: disable=unused-variable
   # Download model
