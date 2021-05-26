@@ -12,5 +12,6 @@
     "source.organizeImports": true
   },
   "jupyter.sendSelectionToInteractiveWindow": true,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "python.languageServer": "None"
 }
