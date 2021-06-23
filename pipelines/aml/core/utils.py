@@ -1,9 +1,29 @@
 import os
+import subprocess
 
 import jupytext
 import nbformat as nbf
 from azureml.contrib.notebook import (AzureMLNotebookHandler, NotebookRunConfig, NotebookRunnerStep)
 from azureml.core import Environment, ScriptRunConfig
+from azureml.pipeline.core import PublishedPipeline
+
+def disable_pipeline(ws, name):
+  # Disable active pipelines with by name
+  for p in PublishedPipeline.list(ws):
+    if p.name == name:
+      p.disable()
+
+def publish_or_replace_pipeline(ws, pipeline, name): # pylint: disable=unused-variable
+  # Disable active pipelines with the same name
+  disable_pipeline(ws, name)
+
+  # Publish pipeline
+  version = subprocess.check_output(["git", "describe", "--always"]).strip().decode("utf-8")
+  return pipeline.publish(
+    name=name,
+    description=f'version {version}',
+    version=version,
+  )
 
 def nb_runner_step( # pylint: disable=unused-variable
   notebook_path,
