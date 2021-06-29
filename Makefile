@@ -1,3 +1,9 @@
+# Load env
+ENV=dev
+ENVFILE=.make/$(ENV).rc
+include $(ENVFILE)
+export $(shell sed 's/=.*//' $(ENVFILE))
+
 apply:
 	# TODO: create pipelines
 
