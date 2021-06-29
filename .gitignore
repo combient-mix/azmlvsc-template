@@ -133,6 +133,5 @@ outputs/
 
 # Template specific
 .devcontainer/devcontainer.json
-.azureml/config.json
 *.stg.ipynb
 papermill_notebook_run_handler.py
