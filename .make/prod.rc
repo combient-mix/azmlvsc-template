@@ -1,1 +1,2 @@
+AML_CONFIG=.azureml/config_prod.json
 # TODO: set make env variables for prod environment here

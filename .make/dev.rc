@@ -1,1 +1,2 @@
+AML_CONFIG=.azureml/config.json
 # TODO: set make env variables for dev environment here

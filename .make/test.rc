@@ -1,1 +1,2 @@
+AML_CONFIG=.azureml/config_test.json
 # TODO: set make env variables for test environment here
